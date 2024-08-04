@@ -146,6 +146,7 @@ public class MasterkeyFileLoadingStrategy implements KeyLoadingStrategy {
 	private void askForPassphrase() throws InterruptedException {
 		var comp = passphraseEntry.savedPassword(passphrase).build();
 		Platform.runLater(() -> {
+			window.setAlwaysOnTop(true);
 			window.setScene(comp.passphraseEntryScene());
 			window.show();
 			Window owner = window.getOwner();
